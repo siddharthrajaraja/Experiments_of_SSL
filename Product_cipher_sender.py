@@ -93,12 +93,12 @@ def returnPlainText(cipherText,key):
     for i in range(0,len(cipherText)):
         if checkSmall(cipherText[i]):
             if( ord(cipherText[i]) - ord('a')-key<0):
-                plainText+=smallCases[25-abs(ord(cipherText[i]) - ord('a')-key)]
+                plainText+=smallCases[26-abs(ord(cipherText[i]) - ord('a')-key)]
             else:
                 plainText+=smallCases[abs(ord(cipherText[i]) - ord('a')-key)]
         elif checkLarge(cipherText[i]):
-            if( ord(cipherText[i]) - ord('A')<0):
-                plainText+=largeCases[25-abs(ord(cipherText[i]) - ord('A')-key)]
+            if( ord(cipherText[i]) - ord('A')-key<0):
+                plainText+=largeCases[26-abs(ord(cipherText[i]) - ord('A')-key)]
             else:
                 plainText+=largeCases[abs(ord(cipherText[i]) - ord('A')-key)]
         else:
